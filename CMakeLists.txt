@@ -3,7 +3,7 @@
 ######################
 cmake_minimum_required(VERSION 3.5.1)
 
-project(pybind11_catkin)
+project(pybind11_catkin CXX)
 
 # required to use std::shared_ptr in code
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wl,--no-as-needed")
