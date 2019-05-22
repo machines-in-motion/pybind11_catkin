@@ -3,8 +3,8 @@
   <name>pybind11_catkin</name>
   <version>1.0.0</version>
   <description>Package for generating python bindings</description>
-  <maintainer email="mnaveau@tue.mpg.de">Movement Control and Generation Group - MPI-IS</maintainer>
-  <license>BSD</license>
+  <maintainer email="mnaveau@tue.mpg.de"> Maximilien Naveau</maintainer>
+  <license>BSD-3 Clause</license>
   
   <buildtool_depend>catkin</buildtool_depend>
   
