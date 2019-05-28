@@ -34,3 +34,8 @@ catkin_package(
   LIBRARIES
   CFG_EXTRAS ${pybind11_treep_clone_dir}/tools/pybind11Tools.cmake
 )
+
+##########################
+# building documentation #
+##########################
+build_doxygen_documentation()
