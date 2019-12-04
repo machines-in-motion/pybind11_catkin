@@ -1,0 +1,3 @@
+# Provide cmake files from pybind11
+list(APPEND CMAKE_MODULE_PATH "@PYBIND11_SOURCE_PATH@/tools/")
+include(@PYBIND11_SOURCE_PATH@/tools/pybind11Tools.cmake)
