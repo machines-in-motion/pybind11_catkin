@@ -26,7 +26,7 @@ set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 
 # TODO move pybind11 next to this directory to simplify the relative path
 # FIXME will this also work in install space?
-set(PYBIND11_SOURCE_PATH "${PROJECT_SOURCE_DIR}/../../../not_catkin/third_party/pybind11")
+set(PYBIND11_SOURCE_PATH "${PROJECT_SOURCE_DIR}/../../third_party/pybind11")
 
 ##########################################
 # export the package as a catkin package #
