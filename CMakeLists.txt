@@ -35,9 +35,14 @@ set(PYBIND11_SOURCE_PATH "${PROJECT_SOURCE_DIR}/../../../not_catkin/third_party/
 find_package(catkin REQUIRED COMPONENTS
     mpi_cmake_modules)
 
+search_for_python()
+
 catkin_package(
-    INCLUDE_DIRS ${PYBIND11_SOURCE_PATH}/include
+    INCLUDE_DIRS
+        ${PYTHON_INCLUDE_DIRS}
+        ${PYBIND11_SOURCE_PATH}/include
     LIBRARIES
+        ${PYTHON_LIBRARIES}
     CFG_EXTRAS pybind11_tools.cmake
     )
 
