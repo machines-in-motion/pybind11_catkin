@@ -43,7 +43,9 @@ catkin_package(
         ${PYBIND11_SOURCE_PATH}/include
     LIBRARIES
         ${PYTHON_LIBRARIES}
-    CFG_EXTRAS pybind11_tools.cmake
+    CFG_EXTRAS
+        pybind11_tools.cmake
+        macros.cmake
     )
 
 ##########################
