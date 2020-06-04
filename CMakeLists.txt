@@ -24,12 +24,16 @@ set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 # Load the local pybind11 download through treep #
 ##################################################
 
-# TODO move pybind11 next to this directory to simplify the relative path
 # FIXME will this also work in install space?
-set(PYBIND11_SOURCE_PATH "${PROJECT_SOURCE_DIR}/../../../not_catkin/third_party/pybind11")
+EXEC_PROGRAM(${CMAKE_CURRENT_SOURCE_DIR}/scripts/find_pybind11
+  OUTPUT_VARIABLE pybind11_path RETURN_VALUE pybind11_found)
 
-##########################################
-# export the package as a catkin package #
+if(NOT ${pybind11_found} MATCHES "0")
+  MESSAGE(FATAL_ERROR "pybind11_catkin: failed to find pybind11 anywhere in the source directory")
+endif()
+
+set(PYBIND11_SOURCE_PATH "${pybind11_path}")
+
 ##########################################
 
 find_package(catkin REQUIRED COMPONENTS
