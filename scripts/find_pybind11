@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+import os,sys
+
+pybind11_g = "pybind11"
+
+def _find_src(starting_dir):
+
+    current  = starting_dir
+    while True:
+        current = os.path.abspath(current+os.sep+"..")
+        if os.path.basename(current) == "src" :
+            return os.path.abspath(current)
+        if not os.path.isdir(current):
+            break
+    raise Exception("src folder not found")
+
+def _find_pybind11(starting_dir):
+
+    src = _find_src(starting_dir)
+    for root,dirs,files in os.walk(src):
+        if pybind11_g in dirs:
+            return os.path.abspath(root+os.sep+pybind11_g)
+    raise Exception(pybind11_g+" not found")
+
+def _get_script_path():
+    full_path = os.path.abspath(__file__)
+    base = os.path.basename(full_path)
+    return os.path.abspath(full_path[:-len(base)])
+
+def _run():
+    try :
+        print(_find_pybind11(_get_script_path()))
+        return True
+    except Exception as e:
+        print(str(e))
+        return False
+
+if __name__ == "__main__":
+
+    success = _run()
+    if success :
+        sys.exit()
+    sys.exit(1)
