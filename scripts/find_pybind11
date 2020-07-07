@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """ @namespace pybind11_catkin.find_pybind11
 (python) executable that either find and print the pybind11 directory
