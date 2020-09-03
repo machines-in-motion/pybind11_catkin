@@ -1,15 +1,25 @@
 <?xml version="1.0"?>
-<package>
-  <name>pybind11_catkin</name>
-  <version>1.0.0</version>
-  <description>Package for generating python bindings</description>
-  <maintainer email="mnaveau@tue.mpg.de"> Maximilien Naveau</maintainer>
-  <license>BSD 3-Clause</license>
+<package format="3">
 
-  <buildtool_depend>catkin</buildtool_depend>
+    <name>pybind11_catkin</name>
+    <version>1.0.0</version>
 
-  <build_depend>mpi_cmake_modules</build_depend>
+    <description>Package for generating python bindings</description>
+  
+    <author email="mnaveau@tue.mpg.de">Maximilien Naveau</author>
+    <maintainer email="vberenz@tuebingen.mpg.de">Vincent Berenz</maintainer>
 
-  <export>
-  </export>
+    <license>BSD 3-Clause</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <depend>mpi_cmake_modules</depend>
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+
 </package>

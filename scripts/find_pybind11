@@ -50,5 +50,5 @@ if __name__ == "__main__":
 
     success = _run()
     if success :
-        sys.exit()
-    sys.exit(1)
+        sys.exit(1)
+    sys.exit(0)
